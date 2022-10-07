@@ -1,5 +1,5 @@
 body {
-    background-color: #E4AEC5;
+    background-color: green;
 }
 
 .top-container {
@@ -8,12 +8,12 @@ body {
 }
 
 .middle-container {
-    background-color: #82A284;
+    background-color: purple;
 }
 
 .bottom-container {
     position: relative;
-    background-color: #FFC4DD;
+    background-color: orange;
     /* padding: 5px 10px; */
 }
 
