@@ -1,5 +1,15 @@
 body {
-    background-color: #E4AEC5;
+    background-color: #F0A500;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .top-container {
@@ -8,12 +18,12 @@ body {
 }
 
 .middle-container {
-    background-color: #82A284;
+    background-color: #E45826;
 }
 
 .bottom-container {
     position: relative;
-    background-color: #FFC4DD;
+    background-color: #E6D5B8;
     /* padding: 5px 10px; */
 }
 
