@@ -96,7 +96,7 @@ void loop() {
   if (distance < distTrigger)
   {
     Serial.println(distance);
-    String(distance)
+    String(distance);
     PublishSensorInfo();
   }
   delay(10);
