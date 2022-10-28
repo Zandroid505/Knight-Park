@@ -25,6 +25,17 @@ const notes = [
       "Made my first App in React JS, feels awesome to learn something new. I aim to be a full stack dev someday",
     category: "Learning",
   },
+  {
+    garage_number: "dynamic",
+    Floor_number: "dynamic",
+    Taken_spots: "dynamic",
+  },
+  {
+    garage_number: "dynamic",
+    Floor_number: "dynamic",
+    Taken_spots: "dynamic",
+  },
+
 ];
 
 module.exports = notes;
