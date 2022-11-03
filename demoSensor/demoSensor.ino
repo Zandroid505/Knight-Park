@@ -113,5 +113,9 @@ void loop() {
     // notify broker that spot is filled
     // turn spot light red
   }
+
+  // not sure if arduino clock is too fast for the sensor, or broker, and/or vice versa, so this (hopefully)
+  // gives a chance for everything to catch up to one another
+  delay(250);
   
 }
