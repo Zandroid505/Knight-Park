@@ -1,8 +1,6 @@
 // Kobe Conomon
 // Last edited: 9/25 - edit time delay in loop; add distTrigger variable
 
-// Parking spot naming convention: garageLetter_floorNumber_spotNumber
-
 // Reads Ultrasonic Sensor (HC-SR04) distance, and sends flag to Python script
 // when someone is within appropriate distance
 
