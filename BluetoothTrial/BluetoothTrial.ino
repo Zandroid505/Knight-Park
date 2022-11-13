@@ -13,7 +13,7 @@
 BluetoothSerial SerialBT;
 
   // creating echo & trigger variables for each sensor
-  // Format: Garage_floor_spot
+  // Format: Garage_floor_spot_takenornot
   int trig_A_01_01 = 32;
   int echo_A_01_01 = 33;
   
@@ -78,6 +78,7 @@ void setup() {
 }
 
 void loop() {
+  boolean flag;
    
   if (Serial.available()) {
     SerialBT.write(Serial.read());
@@ -102,51 +103,62 @@ void loop() {
   // pass these to a single function
   if (distance_A_01_01 < distTrigger)
   {
-    Serial.println("A_01_01 filled");
+    Serial.println("A_01_01_1");
     digitalWrite(light_A_01_01, LOW);
   }
-  else
+  else{
+    Serial.println("A_01_01_0");
     digitalWrite(light_A_01_01, HIGH);
-
+  }
   if (distance_A_01_02 < distTrigger)
   {
-    Serial.println("A_01_02 filled");
+    Serial.println("A_01_02_1");
     digitalWrite(light_A_01_02, LOW);
   }
-  else
-    digitalWrite(light_A_01_02, HIGH);
+  else{
+    Serial.println("A_01_02_1");
+    digitalWrite(light_A_01_02, HIGH);   
+  }
 
   if (distance_A_02_01 < distTrigger)
   {
-    Serial.println("A_02_01 filled");
+    Serial.println("A_02_01_1");
     digitalWrite(light_A_02_01, LOW);
   }
-  else
-    digitalWrite(light_A_02_01, HIGH);
+  else{
+    Serial.println("A_02_01_0");   
+    digitalWrite(light_A_02_01, HIGH); 
+  }
 
   if (distance_A_02_02 < distTrigger)
   {
-    Serial.println("A_02_02 filled");
+    Serial.println("A_02_02_1");
     digitalWrite(light_A_02_02, LOW);
   }
-  else
-    digitalWrite(light_A_02_02, HIGH);
+  else{
+    Serial.println("A_02_02_1");
+    digitalWrite(light_A_02_02, HIGH);    
+  }
 
   if (distance_B_01_01 < distTrigger)
   {
-    Serial.println("B_01_01 filled");
+    Serial.println("B_01_01_1");
     digitalWrite(light_B_01_01, LOW);
   }
-  else
-    digitalWrite(light_B_01_01, HIGH);
+  else{
+    Serial.println("B_01_01_0");
+    digitalWrite(light_B_01_01, HIGH);    
+  }
 
   if (distance_B_02_01 < distTrigger)
   {
-    Serial.println("B_02_01 filled");
+    Serial.println("B_02_01_1");
     digitalWrite(light_B_02_01, LOW);
   }
-  else
-    digitalWrite(light_A_02_01, HIGH);
+  else{
+    Serial.println("B_02_01_1");
+    digitalWrite(light_A_02_01, HIGH);    
+  }
 
   // not sure if arduino clock is too fast for the sensor, site, and/or vice versa, so this (hopefully)
   // gives a chance for everything to catch up to one another
