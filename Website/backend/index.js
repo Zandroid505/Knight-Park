@@ -13,12 +13,16 @@ app.get("/", (req, res) => {
 app.get("/here", (req, res) => {
   var dataToSend;
 
-  const python = spawn("python3", ["parkSpotFetch.py"]);
+  python = spawn("python3", ["parkSpotFetch.py"]);
 
   // collect data from script
   python.stdout.on("data", (data) => {
     console.log("Pipe data from python script ...");
     dataToSend = data.toString();
+  });
+
+  python.stderr.on('data', (data) => {
+    console.log('stderr: ', + data);
   });
 
   // in close event we are sure that stream from child process is closed

@@ -8,7 +8,6 @@ function App() {
       <div class="top-container">
         <div class="row">
           <h1>Knight Park</h1>
-          <DropDown></DropDown>
         </div>
       </div>
 
