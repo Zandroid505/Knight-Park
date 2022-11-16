@@ -52,7 +52,7 @@
   int light_A_02_01 = 17;
   int light_A_02_02 = 16;
   int light_B_01_01 = 4;
-  int light_B_02_01 = 15;
+  int light_B_02_01 = 0;
 
   boolean flag[6] = {0,0,0,0,0,0};
 
