@@ -7,7 +7,7 @@ function App() {
     <div class="container-fluid text-center">
       <div class="top-container">
         <div class="row">
-          <h1>Knight Park</h1>
+          <h1>Test</h1>
           <DropDown></DropDown>
         </div>
       </div>
