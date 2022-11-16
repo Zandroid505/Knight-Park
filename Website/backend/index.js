@@ -13,12 +13,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/here", (req, res) => {
-  var dataToSend;
+  var dataToSend = "default Message";
 
-  const python = spawn("python", ["script1.py"]);
+  const python = spawn("python3", ["script1.py"]);
 
   // collect data from script
-  python.stdout.on("data", function (data) {
+  python.stdout.on("data", (data) => {
     console.log("Pipe data from python script ...");
     dataToSend = data.toString();
   });
