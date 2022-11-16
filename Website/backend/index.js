@@ -1,29 +1,34 @@
 const express = require("express");
-const {spawn} = require('node:child_process');
-const app = express();
 const notes = require("./data/notes");
 const dotenv = require("dotenv");
+const {spawn} = require('node:child_process');
 
+const app = express();
 dotenv.config();
 
 app.get("/", (req, res) => {
-  // res.send("API is running");
-  // spawn new child process to call the python script
-  const python = spawn('python', ['/home/montwes/cDrive/Documents/Coding/Projects/Knight-Park/Website/backend/parkSpotFetch.py']);
-  
-  // // collect data from script
-  // python.stdout.on('data', function (data) {
-  //   console.log('Pipe data from python script ...');
-  //   dataToSend = data.toString();
-  //  });
+  res.send("api is running");
+});
 
-  //  // in close event we are sure that stream from child process is closed
-  // python.on('close', (code) => {
-  // console.log(`child process close all stdio with code ${code}`);
-  
-  // send data to browser
-  res.send("Hi there")
-  // });
+app.get("/here", (req, res) => {
+  var dataToSend;
+
+  const python = spawn("python3", ["parkSpotFetch.py"]);
+
+  // collect data from script
+  python.stdout.on("data", (data) => {
+    console.log("Pipe data from python script ...");
+    dataToSend = data.toString();
+  });
+
+  // in close event we are sure that stream from child process is closed
+  python.on("close", (code) => {
+    console.log(`child process close all stdio with code ${code}`);
+    // send data to browser
+    res.send(dataToSend);
+  });
+
+  // res.send("API is running");
 });
 
  
